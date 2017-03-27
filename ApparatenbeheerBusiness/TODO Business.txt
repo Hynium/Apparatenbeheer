@@ -1,0 +1,31 @@
+﻿TODO (Sam)
+=======================
+
+Definitions library included in test environment
+=> object reference by id and username not longer needed.
+TODO: 
+	Avoid accessing repositories in method extention classes.
+	Change method parameters from id and name to object references.
+	Search repositories in controller class.
+
+Avoid using Delete and Add methods to update. Use Update method instead.
+Remember to use the appropriate return types for every extention method. 
+This makes it possible to update database entities.
+
+Code runs server sided. Cannot access data from client.
+
+
+??? When assigning a ticket to a responsible member, is the member referenced by username, id or object ???
+
+Use private field mappers in persistence controller instead of local mappers.
+
+
+Don't use casting when converting status id to status enum.
+=> This can lead to future errors when database status and defenitions status do not match.
+TODO:
+	Use a switch when assigning status in the mappers.
+
+There must be a better way to update ticket and device in method AcceptAanvraag.
+TODO: Find something to replace tuple.
+
+Add GetApparaten method to user methods and controller.
