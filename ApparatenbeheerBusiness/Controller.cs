@@ -39,18 +39,21 @@ namespace Apparatenbeheer.Business {
 
         }
 
-        public bool Login(string username, string password) {
+        public Gebruiker Login(string username, string password) {
+			Logout();
             Gebruiker login = _gebruikerRepository.Find(g => g.Username == username);
             if ((_currentGebruiker = login.Login(password)) != null) {
                 _aanvraagRepository.Clear();
                 foreach (Aanvraag a in _persistenceController.GetAanvragen(_currentGebruiker))
                     _aanvraagRepository.Add(a);
-                return true;
             }
-            return false;
+            return _currentGebruiker;
         }
 
-        public void RegisterGebruiker(string naam, string username, string password, GebruikerRole role) {
+		public void Logout()
+			=> _currentGebruiker = null;
+
+        public Gebruiker RegisterGebruiker(string naam, string username, string password, GebruikerRole role) {
 
             GebruikerBuilder builder;
 
@@ -70,6 +73,8 @@ namespace Apparatenbeheer.Business {
             Gebruiker gebruiker = GebruikerFactory.GetGebruiker(builder);
             gebruiker = _persistenceController.AddGebruiker(gebruiker);
             _gebruikerRepository.Add(gebruiker);
+
+			return gebruiker;
 
         }
 

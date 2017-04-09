@@ -7,54 +7,72 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ApparatenbeheerWeb {
+namespace ApparatenbeheerWeb.Account {
     
     
-    public partial class Site {
+    public partial class Registratie {
         
         /// <summary>
-        /// head control.
+        /// gebruikersnaam control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText gebruikersnaam;
         
         /// <summary>
-        /// form1 control.
+        /// paswoord control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword paswoord;
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// paswoordHerhaling control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword paswoordHerhaling;
         
         /// <summary>
-        /// EigenRolMenu control.
+        /// voornaam control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder EigenRolMenu;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText voornaam;
         
         /// <summary>
-        /// contentPlaceHolder1 control.
+        /// achternaam control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder contentPlaceHolder1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText achternaam;
+        
+        /// <summary>
+        /// foutboodschap control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label foutboodschap;
+        
+        /// <summary>
+        /// btnRegistreren control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRegistreren;
     }
 }
