@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="WerknemerSite.master.cs" Inherits="ApparatenbeheerWeb.WerknemerSite" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <title>Werknemer pagina</title>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="EigenRolMenu" runat="server">
+
+
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            Aanvragen <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+                <asp:HyperLink NavigateUrl="~/Werknemer/Aanvragen.aspx" Text="Mijn aanvragen" runat="server"></asp:HyperLink></li>
+            <li>
+                <asp:HyperLink NavigateUrl="~/Werknemer/NieuweAanvraag.aspx" Text="Nieuwe aanvraag" runat="server"></asp:HyperLink></li>
+        </ul>
+    </li>
+
+
+    <li>
+        <asp:HyperLink NavigateUrl="~/Werknemer/Apparaten.aspx" Text="Mijn apparaten" runat="server"></asp:HyperLink></li>
+    <li><a href="#">Mijn profiel</a></li>
+
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="contentPlaceHolder1" runat="server">
+    <asp:ContentPlaceHolder ID="contentPlaceHolder2" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

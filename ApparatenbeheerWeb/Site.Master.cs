@@ -20,6 +20,8 @@ namespace ApparatenbeheerWeb {
 			Controller controller = (Controller)Session["Controller"];
 			controller.Logout();
 
+			Session["Gebruiker"] = null;
+
 			FormsAuthentication.SignOut();
 			Response.Redirect("~/Account/Login.aspx");
 

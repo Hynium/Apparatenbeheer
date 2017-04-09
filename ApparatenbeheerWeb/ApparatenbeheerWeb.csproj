@@ -98,6 +98,12 @@
     <Content Include="Account\Registratie.aspx" />
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="ICTVerantwoordelijke\Aanvragen.aspx" />
+    <Content Include="ICTVerantwoordelijke\Apparaten.aspx" />
+    <Content Include="ICTVerantwoordelijke\Gebruikers.aspx" />
+    <Content Include="ICTVerantwoordelijke\ICTVerantwoordelijkeProfiel.aspx" />
+    <Content Include="ICTVerantwoordelijke\NieuwApparaat.aspx" />
+    <Content Include="Images\agfa.png" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -111,12 +117,18 @@
     <Content Include="Styles\bootstrap-theme.min.css.map" />
     <Content Include="Styles\bootstrap.css.map" />
     <Content Include="Styles\bootstrap.min.css.map" />
+    <Content Include="Werknemer\Aanvragen.aspx" />
+    <Content Include="Werknemer\Apparaten.aspx" />
+    <Content Include="Werknemer\NieuweAanvraag.aspx" />
+    <Content Include="Werknemer\WerknemerProfiel.aspx" />
+    <Content Include="ICTVerantwoordelijkeSite.master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="WerknemerSite.master" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Styles\bootstrap-theme.css" />
@@ -154,6 +166,48 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ICTVerantwoordelijkeSite.master.cs">
+      <DependentUpon>ICTVerantwoordelijkeSite.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ICTVerantwoordelijkeSite.master.designer.cs">
+      <DependentUpon>ICTVerantwoordelijkeSite.master</DependentUpon>
+    </Compile>
+    <Compile Include="ICTVerantwoordelijke\Aanvragen.aspx.cs">
+      <DependentUpon>Aanvragen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ICTVerantwoordelijke\Aanvragen.aspx.designer.cs">
+      <DependentUpon>Aanvragen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ICTVerantwoordelijke\Apparaten.aspx.cs">
+      <DependentUpon>Apparaten.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ICTVerantwoordelijke\Apparaten.aspx.designer.cs">
+      <DependentUpon>Apparaten.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ICTVerantwoordelijke\Gebruikers.aspx.cs">
+      <DependentUpon>Gebruikers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ICTVerantwoordelijke\Gebruikers.aspx.designer.cs">
+      <DependentUpon>Gebruikers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ICTVerantwoordelijke\ICTVerantwoordelijkeProfiel.aspx.cs">
+      <DependentUpon>ICTVerantwoordelijkeProfiel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ICTVerantwoordelijke\ICTVerantwoordelijkeProfiel.aspx.designer.cs">
+      <DependentUpon>ICTVerantwoordelijkeProfiel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ICTVerantwoordelijke\NieuwApparaat.aspx.cs">
+      <DependentUpon>NieuwApparaat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ICTVerantwoordelijke\NieuwApparaat.aspx.designer.cs">
+      <DependentUpon>NieuwApparaat.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -161,6 +215,41 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WerknemerSite.master.cs">
+      <DependentUpon>WerknemerSite.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WerknemerSite.master.designer.cs">
+      <DependentUpon>WerknemerSite.master</DependentUpon>
+    </Compile>
+    <Compile Include="Werknemer\Aanvragen.aspx.cs">
+      <DependentUpon>Aanvragen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Werknemer\Aanvragen.aspx.designer.cs">
+      <DependentUpon>Aanvragen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Werknemer\Apparaten.aspx.cs">
+      <DependentUpon>Apparaten.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Werknemer\Apparaten.aspx.designer.cs">
+      <DependentUpon>Apparaten.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Werknemer\NieuweAanvraag.aspx.cs">
+      <DependentUpon>NieuweAanvraag.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Werknemer\NieuweAanvraag.aspx.designer.cs">
+      <DependentUpon>NieuweAanvraag.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Werknemer\WerknemerProfiel.aspx.cs">
+      <DependentUpon>WerknemerProfiel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Werknemer\WerknemerProfiel.aspx.designer.cs">
+      <DependentUpon>WerknemerProfiel.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -173,6 +262,7 @@
       <Name>ApparatenbeheerDefinitions</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

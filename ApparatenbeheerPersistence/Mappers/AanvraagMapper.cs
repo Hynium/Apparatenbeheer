@@ -70,10 +70,11 @@ namespace Apparatenbeheer.Persistence.Mappers {
 		public Aanvraag AddAanvraagToDB(Aanvraag aanvraag) {
 
 			MySqlConnection connection = new MySqlConnection(_connectionString);
-			MySqlCommand command = new MySqlCommand("INSERT INTO aanvraag(idAanvraag, Gebruiker_idAanvrager, Gebruiker_idOntvanger, Gebruiker_idVerantwoordelijke, idApparaatType)" +
-				" VALUES (@id, @aanvrager, @ontvanger, @verantwoordelijke, @type);", connection);
+			MySqlCommand command = new MySqlCommand("INSERT INTO aanvraag(idAanvraag, Status_idStatus, Gebruiker_idAanvrager, Gebruiker_idOntvanger, Gebruiker_idVerantwoordelijke, ApparaatType_idApparaatType)" +
+				" VALUES (@id, @status, @aanvrager, @ontvanger, @verantwoordelijke, @type);", connection);
 
 			command.Parameters.AddWithValue("id", aanvraag.Id);
+			command.Parameters.AddWithValue("status", AanvraagStatus.Assigned);
 			command.Parameters.AddWithValue("aanvrager", aanvraag.Aanvrager.Id);
             command.Parameters.AddWithValue("ontvanger", aanvraag.Ontvanger.Id);
 

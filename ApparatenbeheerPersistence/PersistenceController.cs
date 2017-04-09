@@ -22,6 +22,7 @@ namespace Apparatenbeheer.Persistence {
         private GebruikerMapper _gebruikerMapper;
         private ApparaatMapper _apparaatMapper;
         private AanvraagMapper _aanvraagMapper;
+		private ApparaatTypeMapper _apparaatTypeMapper;
 
         private PersistenceController() {
             _connectionString = ConfigurationManager.ConnectionStrings["apparatenbeheerDB"].ToString();
@@ -29,6 +30,7 @@ namespace Apparatenbeheer.Persistence {
             _gebruikerMapper = new GebruikerMapper(_connectionString);
             _apparaatMapper = new ApparaatMapper(_connectionString);
             _aanvraagMapper = new AanvraagMapper(_connectionString);
+			_apparaatTypeMapper = new ApparaatTypeMapper(_connectionString);
         }
 
         public static PersistenceController GetInstance()
@@ -42,6 +44,9 @@ namespace Apparatenbeheer.Persistence {
 
 		public List<Aanvraag> GetAanvragen(Gebruiker currentGebruiker)
 			=> (_aanvragen = _aanvraagMapper.GetAanvragenFromDB(currentGebruiker, _gebruikers, _apparaten));
+
+		public List<ApparaatType> GetApparaatTypes()
+			=> _apparaatTypeMapper.GetApparaatTypesFromDB();
 
 		public Gebruiker AddGebruiker(Gebruiker gebruiker) {
 			_gebruikers.Add(gebruiker);

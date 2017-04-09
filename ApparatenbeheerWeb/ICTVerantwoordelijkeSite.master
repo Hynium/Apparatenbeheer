@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ICTVerantwoordelijkeSite.master.cs" Inherits="ApparatenbeheerWeb.ICTVerantwoordelijkeSite" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="EigenRolMenu" runat="server">
+
+    <li><asp:HyperLink NavigateUrl="~/ICTVerantwoordelijke/Aanvragen.aspx" Text="Aanvragen" runat="server"></asp:HyperLink></li>
+
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            Apparaten <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+                <asp:HyperLink NavigateUrl="~/ICTVerantwoordelijke/Apparaten.aspx" Text="Beheer apparaten" runat="server"></asp:HyperLink></li>
+            <li>
+                <asp:HyperLink NavigateUrl="~/ICTVerantwoordelijke/NieuwApparaat.aspx" Text="Nieuw apparaat" runat="server"></asp:HyperLink></li>
+        </ul>
+    </li>
+
+    <li><asp:HyperLink NavigateUrl="~/ICTVerantwoordelijke/Gebruikers.aspx" Text="Gebruikers beheren" runat="server"></asp:HyperLink></li>
+    <li><asp:HyperLink NavigateUrl="~/ICTVerantwoordelijke/ICTVerantwoordelijkeProfiel.aspx" Text="Mijn profiel" runat="server"></asp:HyperLink></li>
+
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="contentPlaceHolder1" runat="server">
+    <asp:ContentPlaceHolder ID="contentPlaceHolder4" runat="server">
+
+    </asp:ContentPlaceHolder>
+</asp:Content>

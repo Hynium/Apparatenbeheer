@@ -103,21 +103,57 @@ namespace Apparatenbeheer.Business {
 
         }
 
+		public List<Apparaat> GetApparaten() {
+
+			if (_currentGebruiker == null)
+				throw new Exception("Niemand is aangemeld");
+
+			return _currentGebruiker.GetApparaten();
+
+		}
+
+		public List<Apparaat> GetAllApparaten()
+			=> _apparaatRepository;
+		 
+		public void UpdateApparaat(int Id, string Type, string Code, string Omschrijving, decimal Prijs, string Gebruiker) {
+
+			Apparaat apparaat = _apparaatRepository.Find(a => a.Id == Id);
+			apparaat.Code = Code;
+			apparaat.Omschrijving = Omschrijving;
+			apparaat.Prijs = Prijs;
+
+		}
+
+		public List<ApparaatType> GetApparaatTypes() {
+			return _persistenceController.GetApparaatTypes();
+		}
+
         #endregion
 
         #region WerknemerFunctions
 
-        public void ApparaatAanvragen(string type) {
+        public void ApparaatAanvragen(string type, string ontvanger, string verantwoordelijke) {
             if (!(_currentGebruiker is Werknemer))
                 throw new Exception("Je kan dit niet uitvoeren.");
 
-            Aanvraag aanvraag = ((Werknemer)_currentGebruiker).ApparaatAanvragen(_currentGebruiker, new ApparaatType(type));
+			ICTVerantwoordelijke v = (ICTVerantwoordelijke)_gebruikerRepository.Find(g => g.Username == verantwoordelijke);
+			Gebruiker gebruiker = _gebruikerRepository.Find(g => g.Username == ontvanger);
+
+            Aanvraag aanvraag = ((Werknemer)_currentGebruiker).ApparaatAanvragen(gebruiker, new ApparaatType(type), v);
             _persistenceController.AddAanvraag(aanvraag);
         }
 
         #endregion
 
         #region ICTVerantwoordelijkeFunctions
+
+		public List<Gebruiker> GetGebruikers() {
+
+			if (!(_currentGebruiker is ICTVerantwoordelijke))
+				throw new Exception("Je kan dit niet uitvoeren.");
+
+			return _gebruikerRepository;
+		}
 
         public void AcceptAanvraag(Aanvraag aanvraag, string commentaar) {
             if (!(_currentGebruiker is ICTVerantwoordelijke))

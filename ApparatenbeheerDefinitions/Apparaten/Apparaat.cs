@@ -9,10 +9,10 @@ namespace Apparatenbeheer.Definitions.Apparaten {
 	public class Apparaat {
 
 		public int? Id { get; set; }
-		public string Code { get; private set; }
-		public string Omschrijving { get; private set; }
+		public string Code { get; set; }
+		public string Omschrijving { get; set; }
 		public ApparaatType Type { get; private set; }
-		public decimal Prijs { get; private set; }
+		public decimal Prijs { get; set; }
 
 		public Gebruikers.Gebruiker CurrentGebruiker { get; set; }
 

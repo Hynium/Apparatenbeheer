@@ -15,7 +15,7 @@ namespace Apparatenbeheer.UnitTest {
 
 			Controller controller = new Controller();
 
-			bool result = controller.Login("Joh_Poo", "JP456");
+			bool result = controller.Login("Joh_Poo", "JP456") != null;
 
 			Assert.AreEqual(true, result);
 
